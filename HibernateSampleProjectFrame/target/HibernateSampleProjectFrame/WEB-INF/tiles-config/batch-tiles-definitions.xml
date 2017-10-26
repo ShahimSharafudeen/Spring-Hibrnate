@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+	
+	<definition name="welcome" template="/WEB-INF/jsp/tiles-template/mainTemplate.jsp">
+		<put-attribute name="title" value="Sift Portal : Welcome"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/tiles-template/siftheader.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/side-bar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/index.jsp" />
+	</definition>
+	
+	<!-- <definition name="welcome" template="/WEB-INF/jsp/tiles-template/mainTemplate.jsp">
+		<put-attribute name="title" value="Sift Portal : Welcome"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/tiles-template/siftheader.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/side-bar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/welcome.jsp" />
+	</definition> 
+	
+	<definition name="createNewSegment" template="/WEB-INF/jsp/tiles-template/mainTemplate.jsp">
+		<put-attribute name="title" value="Sift Portal : CreateNewSegment"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/tiles-template/siftheader.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/side-bar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/batchApp/newSegmentBuilder.jsp" />
+	</definition>
+	<definition name="listOfSegments" template="/WEB-INF/jsp/tiles-template/mainTemplate.jsp">
+		<put-attribute name="title" value="Sift Portal : Segment List"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/tiles-template/siftheader.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/side-bar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/batchApp/listOfSegments.jsp" />
+	</definition>
+	<definition name="offlineAnalyticFrameworkModelDeployment" template="/WEB-INF/jsp/tiles-template/mainTemplate.jsp">
+		<put-attribute name="title" value="Sift Portal : Model Deployment"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/tiles-template/siftheader.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/side-bar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/batchApp/offlineAnalyticFrameworkModelDeployment.jsp" />
+	</definition>
+	<definition name="offlineAnalyticFrameworkModelLibrary" template="/WEB-INF/jsp/tiles-template/mainTemplate.jsp">
+		<put-attribute name="title" value="Sift Portal : Model Library"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/tiles-template/siftheader.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/side-bar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/batchApp/offlineAnalyticFrameworkModelLibrary.jsp" />
+	</definition>
+	<definition name="editSegments" template="/WEB-INF/jsp/tiles-template/mainTemplate.jsp">
+		<put-attribute name="title" value="Sift Portal : Edit Segment"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/tiles-template/siftheader.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/side-bar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/batchApp/editSegment.jsp" />
+	</definition>-->
+		
+	<!-- Added for BatchApp -->
+	<!-- <definition name="/batchApp" extends="defaultTemplate">
+		<put-attribute name="title" value="Sift Portal : Modal List"></put-attribute>
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/batch-sidebar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/batchApp/batchBuilder.jsp"/>
+	</definition>
+	
+	
+	<definition name="/analytics/help" extends="defaultTemplate">
+		<put-attribute name="title" value="Sift Portal : analytics Help"></put-attribute>
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/batch-sidebar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/batchApp/batchApp_help.jsp" />
+	</definition> -->
+	
+	
+</tiles-definitions>

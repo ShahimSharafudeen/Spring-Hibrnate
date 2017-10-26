@@ -1,0 +1,38 @@
+
+/* ========================================================
+*
+* css file for common styles
+*
+* ======================================================== */
+
+.limit-text-message{
+	font-size: 11px;
+    	color: #888888;
+   	font-weight: normal;
+}
+#shortCodes_tag {
+	width:initial;
+}
+#shortCodes_tag {
+	width:initial;
+}
+div.tagsinput span.tag{
+    border: 1px solid #aaaaaa;
+    display: block;
+    float: left;
+    padding: 0 8px;
+    background: #e4e4e4;
+    color: #333;
+    margin: 5px 5px 5px 5px;
+    line-height: 23px;
+    font-size: 11px;
+
+}
+div.tagsinput span.tag a {
+    font-weight: bold;
+    color: #555;
+    font-size: 11px;
+    float: left;
+	margin-right:4px;
+    font-weight: bolder !important;
+}

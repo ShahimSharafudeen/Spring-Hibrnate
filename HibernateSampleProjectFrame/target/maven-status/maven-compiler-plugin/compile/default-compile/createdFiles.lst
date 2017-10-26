@@ -1,0 +1,5 @@
+com\seqato\hibernateSampleProjectFrame\config\PropertyFileReaderConfig.class
+com\seqato\hibernateSampleProjectFrame\util\PropertyFileReader.class
+com\seqato\hibernateSampleProjectFrame\config\DispatcherConfig.class
+com\seqato\hibernateSampleProjectFrame\contoller\HomeController.class
+com\seqato\hibernateSampleProjectFrame\config\WebInitializerConfig.class
