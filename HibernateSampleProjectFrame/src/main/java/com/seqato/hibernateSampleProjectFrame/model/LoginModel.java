@@ -1,20 +1,26 @@
 package com.seqato.hibernateSampleProjectFrame.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.springframework.stereotype.Component;
 
+@Component
 @Entity
 @Table(name="LOGIN")
 public class LoginModel {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
+	@Column(name="id")
 	private int id;
 
 	@Size(min=3, max=50)
@@ -25,6 +31,10 @@ public class LoginModel {
 	@Column(name = "PASSWORD", nullable = false)
 	private String password;
 
+	@MapsId
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id")
+	private EmployeeRolesModel employeeRoles; 
 	
 
 	/**
@@ -79,6 +89,23 @@ public class LoginModel {
 		this.password = password;
 	}
 
+	
+
+	/**
+	 * @return the employeeRoles
+	 */
+	public EmployeeRolesModel getEmployeeRoles() {
+		return employeeRoles;
+	}
+
+
+
+	/**
+	 * @param employeeRoles the employeeRoles to set
+	 */
+	public void setEmployeeRoles(EmployeeRolesModel employeeRoles) {
+		this.employeeRoles = employeeRoles;
+	}
 
 
 	@Override

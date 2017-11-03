@@ -3,17 +3,19 @@ package com.seqato.hibernateSampleProjectFrame.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
 
+@Component
 @Entity
 @Table(name="employee_roles")
 public class EmployeeRolesModel {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
+	@Column(name="id")
 	private int id;
 
 	@Column(name = "name", nullable = false)
@@ -21,7 +23,6 @@ public class EmployeeRolesModel {
 	
 	@Column(name = "role_name", nullable = false)
 	private String roleName;
-
 	
 
 	/**
@@ -75,8 +76,4 @@ public class EmployeeRolesModel {
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 	}
-	
-	
-	
-
 }

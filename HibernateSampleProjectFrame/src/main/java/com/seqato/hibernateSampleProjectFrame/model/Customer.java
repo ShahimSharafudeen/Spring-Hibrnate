@@ -6,10 +6,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -22,8 +20,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="EMPLOYEE")
-public class Employee {
+@Table(name="CUSTOMER")
+public class Customer {
 
 	@Id
 	@GeneratedValue
@@ -48,8 +46,8 @@ public class Employee {
 	private BigDecimal salary;
 	
 	@NotEmpty
-	@Column(name = "SSN", unique=true, nullable = false)
-	private String ssn;
+	@Column(name = "DATA", nullable = false)
+	private String data;
 	
 	@MapsId
 	@OneToOne(cascade = CascadeType.ALL)
@@ -108,15 +106,21 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public String getSsn() {
-		return ssn;
-	}
-
-	public void setSsn(String ssn) {
-		this.ssn = ssn;
-	}
-
 	
+	/**
+	 * @return the data
+	 */
+	public String getData() {
+		return data;
+	}
+
+	/**
+	 * @param data the data to set
+	 */
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	/**
 	 * @return the login
 	 */
@@ -146,9 +150,9 @@ public class Employee {
 			return true;
 		if (obj == null)
 			return false;
-		if (!(obj instanceof Employee))
+		if (!(obj instanceof Customer))
 			return false;
-		Employee other = (Employee) obj;
+		Customer other = (Customer) obj;
 		if (id != other.id)
 			return false;
 		if (name == null) {
@@ -161,7 +165,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", password=" + password + ", address=" + address + ", salary=" + salary + ", ssn=" + ssn + "]";
+		return "Employee [id=" + id + ", name=" + name + ", password=" + password + ", address=" + address + ", salary=" + salary + "]";
 	}
 	
 	

@@ -19,12 +19,15 @@ public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements E
 
 	public void saveEmployee(Employee employee) {
 		persist(employee);
+		//saveOrUpdate(employee);
 	}
 
-	public void deleteEmployeeBySsn(String ssn) {
-		Query query = getSession().createSQLQuery("delete from Employee where ssn = :ssn");
-		query.setString("ssn", ssn);
-		query.executeUpdate();
+	public void deleteEmployeeByName(String name) {
+		Employee employee = findEmployeeByName(name);
+		delete(employee);
+		//Query query = getSession().createSQLQuery("delete from Employee where name = :name");
+		//query.setString("name", name);
+		//query.executeUpdate();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -43,9 +46,9 @@ public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements E
 		return (List<Employee>) criteria.list();
 	}
 
-	public Employee findEmployeeBySsn(String ssn) {
+	public Employee findEmployeeByName(String name) {
 		Criteria criteria = createEntityCriteria();
-		criteria.add(Restrictions.eq("ssn", ssn));
+		criteria.add(Restrictions.eq("name", name));
 		return (Employee) criteria.uniqueResult();
 	}
 }

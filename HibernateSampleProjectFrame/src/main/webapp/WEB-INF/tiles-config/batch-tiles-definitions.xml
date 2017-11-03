@@ -35,6 +35,12 @@
 		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/side-bar.jsp" />
 		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/login.jsp" />
 	</definition>
+	<definition name="custRegistration" template="/WEB-INF/jsp/tiles-template/mainTemplate.jsp">
+		<put-attribute name="title" value="Sift Portal : Welcome"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/tiles-template/siftheader.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/tiles-template/batchApp/side-bar.jsp" />
+		<put-attribute name="content" value="/WEB-INF/jsp/tiles-template/customerRegistration.jsp" />
+	</definition>
 	
 	<!-- <definition name="welcome" template="/WEB-INF/jsp/tiles-template/mainTemplate.jsp">
 		<put-attribute name="title" value="Sift Portal : Welcome"/>

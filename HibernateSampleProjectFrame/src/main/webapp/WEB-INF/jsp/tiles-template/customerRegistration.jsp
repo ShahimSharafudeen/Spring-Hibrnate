@@ -19,16 +19,16 @@
 		<div class="wrapper">
 			<c:choose>
 				<c:when test="${edit == 'true'}">
-					<h2>Update Profile Form</h2>
+					<h2>Update Customer Profile Form</h2>
 				</c:when>
 				<c:otherwise>
-					<h2>Registration Form</h2>
+					<h2>Customer Registration Form</h2>
 				</c:otherwise>
 			</c:choose>
 
 			<form:form method="POST"
-				action="${pageContext.request.contextPath}/${reg}"
-				modelAttribute="employee">
+				action="${pageContext.request.contextPath}/${custReg}"
+				modelAttribute="customer">
 				<form:input type="hidden" path="id" id="id" />
 				<table>
 					<c:choose>
@@ -54,9 +54,9 @@
 					</tr>
 
 					<tr>
-						<td><label for="ssn">SSN: </label></td>
-						<td><form:input path="ssn" id="ssn" /></td>
-						<td><form:errors path="ssn" cssClass="error" /></td>
+						<td><label for="data">Data: </label></td>
+						<td><form:input path="data" id="data" /></td>
+						<td><form:errors path="data" cssClass="error" /></td>
 					</tr>
 
 					<tr>

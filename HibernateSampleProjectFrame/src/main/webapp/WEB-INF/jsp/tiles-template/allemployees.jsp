@@ -39,9 +39,9 @@ tr:first-child {
 									<td>${employee.address}</td>
 									<td>${employee.salary}</td>
 									<td><a
-										href="<c:url value='/login/edit-${employee.ssn}-employee' />">${employee.ssn}</a></td>
+										href="<c:url value='/login/edit-${employee.name}-employee' />">${employee.ssn}</a></td>
 									<td><a
-										href="<c:url value='/login/delete-${employee.ssn}-employee' />">delete</a></td>
+										href="<c:url value='/login/delete-${employee.name}-employee' />">delete</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>

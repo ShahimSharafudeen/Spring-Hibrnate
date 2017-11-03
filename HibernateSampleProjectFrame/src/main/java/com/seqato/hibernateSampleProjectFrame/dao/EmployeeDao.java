@@ -11,11 +11,11 @@ public interface EmployeeDao {
 
 	void saveEmployee(Employee employee);
 	
-	void deleteEmployeeBySsn(String ssn);
+	void deleteEmployeeByName(String name);
 	
 	List<Employee> findAllEmployees();
 
-	Employee findEmployeeBySsn(String ssn);
+	Employee findEmployeeByName(String name);
 	
 	List<Employee> checkEmployeeExist(String name, String password);
 

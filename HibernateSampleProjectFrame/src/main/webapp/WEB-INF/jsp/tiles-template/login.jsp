@@ -21,7 +21,7 @@
 			<h2>Login Page</h2>
 			<h3>${message}</h3>
 
-			<form:form method="POST" action="login" modelAttribute="loginModel">
+			<form:form method="POST" action="${pageContext.request.contextPath}/login" modelAttribute="loginModel">
 			<form:input type="hidden" path="id" id="id" />
 				<table>
 					<tr>

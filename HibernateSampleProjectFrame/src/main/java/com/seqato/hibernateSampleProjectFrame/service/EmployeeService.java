@@ -11,15 +11,15 @@ public interface EmployeeService {
 	
 	void saveEmployee(Employee employee);
 	
-	void updateEmployee(Employee employee);
+	void updateEmployee(Employee employee, String encriptedPassword, String roleName);
 	
-	void deleteEmployeeBySsn(String ssn);
+	void deleteEmployeeByName(String name);
 
 	List<Employee> findAllEmployees(); 
 	
-	Employee findEmployeeBySsn(String ssn);
+	Employee findEmployeeByName(String name);
 
-	boolean isEmployeeSsnUnique(Integer id, String ssn);
+	boolean isEmployeeNameUnique(Integer id, String name);
 	
 	boolean isExistingEmployee(String name, String password);
 	

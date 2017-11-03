@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.seqato.hibernateSampleProjectFrame.dao.EmployeeDao;
 import com.seqato.hibernateSampleProjectFrame.model.Employee;
+import com.seqato.hibernateSampleProjectFrame.model.EmployeeRolesModel;
+import com.seqato.hibernateSampleProjectFrame.model.LoginModel;
 
 
 @Service("employeeService")
@@ -30,29 +32,43 @@ public class EmployeeServiceImpl implements EmployeeService {
 	 * Just fetch the entity from db and update it with proper values within transaction.
 	 * It will be updated in db once transaction ends. 
 	 */
-	public void updateEmployee(Employee employee) {
+	public void updateEmployee(Employee employee, String encriptedPassword, String roleName) {
+		System.out.println(" inside update employee method");
 		Employee entity = dao.findById(employee.getId());
+		System.out.println(" outside update employee method");
 		if(entity!=null){
+			LoginModel login=entity.getLogin();
+			EmployeeRolesModel employeeRolesModel=login.getEmployeeRoles();
+			employeeRolesModel.setName(employee.getName());
+			employeeRolesModel.setRoleName(roleName);
+			
+			login.setName(employee.getName());
+			login.setPassword(encriptedPassword);
+			login.setEmployeeRoles(employeeRolesModel);
+			
 			entity.setName(employee.getName());
+			entity.setAddress(employee.getAddress());
 			entity.setSalary(employee.getSalary());
 			entity.setSsn(employee.getSsn());
+			entity.setPassword(employee.getPassword());
+			entity.setLogin(login);
 		}
 	}
 
-	public void deleteEmployeeBySsn(String ssn) {
-		dao.deleteEmployeeBySsn(ssn);
+	public void deleteEmployeeByName(String name) {
+		dao.deleteEmployeeByName(name);
 	}
 	
 	public List<Employee> findAllEmployees() {
 		return dao.findAllEmployees();
 	}
 
-	public Employee findEmployeeBySsn(String ssn) {
-		return dao.findEmployeeBySsn(ssn);
+	public Employee findEmployeeByName(String name) {
+		return dao.findEmployeeByName(name);
 	}
 
-	public boolean isEmployeeSsnUnique(Integer id, String ssn) {
-		Employee employee = findEmployeeBySsn(ssn);
+	public boolean isEmployeeNameUnique(Integer id, String name) {
+		Employee employee = findEmployeeByName(name);
 		return ( employee == null || ((id != null) && (employee.getId() == id)));
 	}
 	
